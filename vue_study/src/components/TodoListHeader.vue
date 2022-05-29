@@ -6,13 +6,35 @@
 -->
 <template>
   <div class="todo-header">
-    <input type="text" placeholder="请输入你的任务名称，按回车键确认" />
+    <input
+      type="text"
+      placeholder="请输入你的任务名称，按回车键确认"
+      @keyup.enter="add"
+    />
   </div>
 </template>
 
 <script>
+import { nanoid } from 'nanoid';
 export default {
   name: 'TodoListHeader',
+  props: ['addTodoObj'],
+  methods: {
+    add(e) {
+      // 判断输入框为空值，取消添加
+      if (!e.target.value) return;
+      // 创建新的todo对象
+      const todoObj = {
+        id: nanoid(),
+        title: e.target.value,
+        done: false,
+      };
+      // 给父组件传递数据
+      this.addTodoObj(todoObj);
+      // 重置输入框内容
+      e.target.value = '';
+    },
+  },
 };
 </script>
 

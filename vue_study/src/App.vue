@@ -8,9 +8,17 @@
   <div id="app">
     <div class="todo-container">
       <div class="todo-wrap">
-        <todo-list-header />
-        <todo-list-main />
-        <todo-list-footer />
+        <todo-list-header :addTodoObj="addTodoObj" />
+        <todo-list-main
+          :todos="todos"
+          :handleCheck="handleCheck"
+          :deleteTodoObj="deleteTodoObj"
+        />
+        <todo-list-footer
+          :todos="todos"
+          :checkedAllTodos="checkedAllTodos"
+          :clearAllDone="clearAllDone"
+        />
       </div>
     </div>
   </div>
@@ -23,10 +31,55 @@ import TodoListFooter from './components/TodoListFooter.vue';
 
 export default {
   name: 'App',
+  data() {
+    return {
+      todos: [
+        { id: '001', title: '吃饭', done: true },
+        { id: '002', title: '睡觉', done: false },
+        { id: '003', title: '打豆豆', done: true },
+      ],
+    };
+  },
   components: {
     TodoListHeader,
     TodoListMain,
     TodoListFooter,
+  },
+  methods: {
+    // 添加一个todoObj
+    addTodoObj(todoObj) {
+      this.todos.unshift(todoObj);
+    },
+    // 改变todoObj的勾选状态
+    handleCheck(id) {
+      // 找到操作的todoObj，改变其勾选状态
+      this.todos.forEach((todoObj) => {
+        if (todoObj.id == id) {
+          todoObj.done = !todoObj.done;
+        }
+      });
+    },
+    // 删除一个todoObj
+    deleteTodoObj(id) {
+      if (confirm('确定删除吗？')) {
+        // 过滤掉要删除的元素，重新赋值
+        this.todos = this.todos.filter((todoObj) => todoObj.id != id);
+      }
+    },
+    // 全选or取消全选
+    checkedAllTodos(done) {
+      // 拿到TodoListFooter组件的全选or取消全选的boolean值给所有todoObj的done赋值
+      this.todos.forEach((todoObj) => {
+        todoObj.done = done;
+      });
+    },
+    // 清除已完成任务
+    clearAllDone() {
+      // filter返回的结果是符合条件的内容，也就是默认为true，所以取反找到false的元素
+      this.todos = this.todos.filter((todoObj) => {
+        return !todoObj.done;
+      });
+    },
   },
 };
 </script>

@@ -10,6 +10,8 @@
       v-for="todoObj in todos"
       :key="todoObj.id"
       :todoObj="todoObj"
+      :handleCheck="handleCheck"
+      :deleteTodoObj="deleteTodoObj"
     />
   </ul>
 </template>
@@ -18,16 +20,8 @@
 import TodoListItem from './TodoListItem.vue';
 export default {
   name: 'TodoListMain',
+  props: ['todos', 'handleCheck', 'deleteTodoObj'],
   components: { TodoListItem },
-  data() {
-    return {
-      todos: [
-        { id: '001', title: '吃饭', done: true },
-        { id: '002', title: '睡觉', done: false },
-        { id: '003', title: '打豆豆', done: true },
-      ],
-    };
-  },
 };
 </script>
 
