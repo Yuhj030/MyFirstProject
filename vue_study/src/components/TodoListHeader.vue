@@ -18,7 +18,6 @@
 import { nanoid } from 'nanoid';
 export default {
   name: 'TodoListHeader',
-  props: ['addTodoObj'],
   methods: {
     add(e) {
       // 判断输入框为空值，取消添加
@@ -30,7 +29,8 @@ export default {
         done: false,
       };
       // 给父组件传递数据
-      this.addTodoObj(todoObj);
+      // this.addTodoObj(todoObj);
+      this.$emit('addTodoObj', todoObj);
       // 重置输入框内容
       e.target.value = '';
     },

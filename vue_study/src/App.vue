@@ -8,7 +8,7 @@
   <div id="app">
     <div class="todo-container">
       <div class="todo-wrap">
-        <todo-list-header :addTodoObj="addTodoObj" />
+        <todo-list-header @addTodoObj="addTodoObj" />
         <todo-list-main
           :todos="todos"
           :handleCheck="handleCheck"
@@ -16,8 +16,8 @@
         />
         <todo-list-footer
           :todos="todos"
-          :checkedAllTodos="checkedAllTodos"
-          :clearAllDone="clearAllDone"
+          @checkedAllTodos="checkedAllTodos"
+          @clearAllDone="clearAllDone"
         />
       </div>
     </div>

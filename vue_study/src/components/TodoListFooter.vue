@@ -19,7 +19,7 @@
 <script>
 export default {
   name: 'TodoListFooter',
-  props: ['todos', 'checkedAllTodos', 'clearAllDone'],
+  props: ['todos'],
   computed: {
     doneTotal() {
       // let doneArr = this.todos.filter((todoObj) => todoObj.done == true);
@@ -35,14 +35,16 @@ export default {
         return this.doneTotal == this.todos.length;
       },
       set(value) {
-        this.checkedAllTodos(value);
+        // this.checkedAllTodos(value);
+        this.$$emit('checkedAllTodos', value);
       },
     },
   },
   methods: {
     // 通知App组件清除所有已完成任务
     clearDone() {
-      this.clearAllDone();
+      // this.clearAllDone();
+      this.$emit('clearAllDone');
     },
   },
 };
