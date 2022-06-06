@@ -36,7 +36,7 @@ export default {
       },
       set(value) {
         // this.checkedAllTodos(value);
-        this.$$emit('checkedAllTodos', value);
+        this.$emit('checkedAllTodos', value);
       },
     },
   },
