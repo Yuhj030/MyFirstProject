@@ -23,15 +23,17 @@
 <script>
 export default {
   name: 'TodoListItem',
-  props: ['todoObj', 'handleCheck', 'deleteTodoObj'],
+  props: ['todoObj'],
   methods: {
     // 通知App组件改变对应的todoObj勾选状态
     checkTodoObj(id) {
-      this.handleCheck(id);
+      // this.handleCheck(id);
+      this.$bus.$emit('handleCheck', id);
     },
     // 通知App组件删除对应的todoObj
     handleDelete(id) {
-      this.deleteTodoObj(id);
+      // this.deleteTodoObj(id);
+      this.$bus.$emit('deleteTodoObj', id);
     },
   },
 };

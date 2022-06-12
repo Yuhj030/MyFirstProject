@@ -9,11 +9,7 @@
     <div class="todo-container">
       <div class="todo-wrap">
         <todo-list-header @addTodoObj="addTodoObj" />
-        <todo-list-main
-          :todos="todos"
-          :handleCheck="handleCheck"
-          :deleteTodoObj="deleteTodoObj"
-        />
+        <todo-list-main :todos="todos" />
         <todo-list-footer
           :todos="todos"
           @checkedAllTodos="checkedAllTodos"
@@ -76,6 +72,14 @@ export default {
         return !todoObj.done;
       });
     },
+  },
+  mounted() {
+    this.$bus.$on('handleCheck', this.handleCheck);
+    this.$bus.$on('deleteTodoObj', this.deleteTodoObj);
+  },
+  beforeDestroy() {
+    this.$bus.$off('handleCheck');
+    this.$bus.$off('deleteTodoObj');
   },
   watch: {
     todos: {

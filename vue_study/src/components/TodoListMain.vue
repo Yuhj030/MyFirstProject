@@ -20,7 +20,7 @@
 import TodoListItem from './TodoListItem.vue';
 export default {
   name: 'TodoListMain',
-  props: ['todos', 'handleCheck', 'deleteTodoObj'],
+  props: ['todos'],
   components: { TodoListItem },
 };
 </script>
