@@ -24,6 +24,7 @@
 import TodoListHeader from './components/TodoListHeader.vue';
 import TodoListMain from './components/TodoListMain.vue';
 import TodoListFooter from './components/TodoListFooter.vue';
+import pubsub from 'pubsub-js';
 
 export default {
   name: 'App',
@@ -52,7 +53,7 @@ export default {
       });
     },
     // 删除一个todoObj
-    deleteTodoObj(id) {
+    deleteTodoObj(_, id) {
       if (confirm('确定删除吗？')) {
         // 过滤掉要删除的元素，重新赋值
         this.todos = this.todos.filter((todoObj) => todoObj.id != id);
@@ -72,14 +73,19 @@ export default {
         return !todoObj.done;
       });
     },
+    demo(mesName, data) {
+      console.log('订阅的消息名称:', mesName, '数据:', data);
+    },
   },
   mounted() {
     this.$bus.$on('handleCheck', this.handleCheck);
-    this.$bus.$on('deleteTodoObj', this.deleteTodoObj);
+    // this.$bus.$on('deleteTodoObj', this.deleteTodoObj);
+    this.subId = pubsub.subscribe('deleteTodoObj', this.deleteTodoObj);
   },
   beforeDestroy() {
     this.$bus.$off('handleCheck');
-    this.$bus.$off('deleteTodoObj');
+    // this.$bus.$off('deleteTodoObj');
+    pubsub.unsubscribe(this.subId);
   },
   watch: {
     todos: {
@@ -113,9 +119,16 @@ body {
 }
 
 .btn-danger {
+  margin-left: 5px;
   color: #fff;
   background-color: #da4f49;
   border: 1px solid #bd362f;
+}
+
+.btn-edit {
+  color: #fff;
+  background-color: skyblue;
+  border: 1px solid skyblue;
 }
 
 .btn-danger:hover {

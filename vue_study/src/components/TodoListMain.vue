@@ -10,8 +10,6 @@
       v-for="todoObj in todos"
       :key="todoObj.id"
       :todoObj="todoObj"
-      :handleCheck="handleCheck"
-      :deleteTodoObj="deleteTodoObj"
     />
   </ul>
 </template>

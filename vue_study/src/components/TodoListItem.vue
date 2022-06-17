@@ -13,14 +13,18 @@
         @change="checkTodoObj(todoObj.id)"
       />
       <span>{{ todoObj.title }}</span>
+      <input type="text" :value="todoObj.title" />
     </label>
     <button class="btn btn-danger" @click="handleDelete(todoObj.id)">
       删除
     </button>
+    <button class="btn btn-edit">编辑</button>
+    <!-- <button class="btn btn-danger" @click="handleTest">测试</button> -->
   </li>
 </template>
 
 <script>
+import pubsub from 'pubsub-js';
 export default {
   name: 'TodoListItem',
   props: ['todoObj'],
@@ -33,7 +37,11 @@ export default {
     // 通知App组件删除对应的todoObj
     handleDelete(id) {
       // this.deleteTodoObj(id);
-      this.$bus.$emit('deleteTodoObj', id);
+      // this.$bus.$emit('deleteTodoObj', id);
+      pubsub.publish('deleteTodoObj', id);
+    },
+    handleTest() {
+      pubsub.publish('demo', 666);
     },
   },
 };
