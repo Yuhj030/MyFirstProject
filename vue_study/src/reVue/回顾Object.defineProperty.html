@@ -1,0 +1,41 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yuhj
+ * @Date: 2022-07-14 15:22:14
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = 100;
+      const person = {
+        name: 'abc',
+        gender: 'male',
+        age: num,
+      };
+      Object.defineProperty(person, 'age', {
+        // value: 18,
+        enumerable: true,
+        // writable: true,
+        configurable: true,
+        get() {
+          return num;
+        },
+        set(value) {
+          num = value;
+        },
+      });
+      for (const key in person) {
+        const element = person[key];
+        console.log(key, element);
+      }
+      console.log(person);
+    </script>
+  </body>
+</html>
