@@ -1,0 +1,39 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: Yuhj
+ * @Date: 2022-07-30 18:05:35
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        height: 300px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        background-color: red;
+      }
+      .box div {
+        width: 50px;
+        /* 文字过长省略效果 */
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        /* 文字过长省略效果 */
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div>111111111111111111111111</div>
+      <div>2222</div>
+    </div>
+  </body>
+</html>

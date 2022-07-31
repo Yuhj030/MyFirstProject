@@ -1,0 +1,34 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yuhj
+ * @Date: 2022-07-12 11:49:54
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 利用script标签引入Vue -->
+    <script src="./js/vue.js"></script>
+  </head>
+  <body>
+    <!-- Vue根据id接管到的容器 -->
+    <div id="root">
+      <h1>hello,{{name}}</h1>
+    </div>
+    <script>
+      Vue.config.productionTip = true; // 关闭生产提示
+      new Vue({
+        el: '#root',
+        data() {
+          return {
+            name: '嫩牛五方',
+          };
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,577 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yuhj
+ * @Date: 2022-07-04 10:48:58
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./color-yellow.css" /> -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      table {
+        width: 200px;
+        height: 200px;
+        /* border-collapse: collapse; */
+      }
+      /* .box {
+        width: 300px;
+        height: 300px;
+        background-color: #bfa;
+        cursor: text;
+      } */
+      /* .father {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        z-index: 999;
+        background-color: red;
+      }
+      .son {
+        width: 100px;
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        height: 100px;
+        background-color: blue;
+      }
+      .other {
+        width: 300px;
+        height: 300px;
+        background-color: green;
+      } */
+      /* .box {
+        width: 1226px;
+        height: 614px;
+        margin: 100px auto;
+      }
+      .left {
+        width: 234px;
+        height: 614px;
+        float: left;
+        background-color: blue;
+      }
+      .right {
+        width: 978px;
+        height: 614px;
+        float: right;
+      } */
+      /* .item {
+        width: 234px;
+        height: 300px;
+        float: left;
+        margin-right: 14px;
+        margin-bottom: 14px;
+        background-color: #bfa;
+      }
+      .item:nth-child(4n) {
+        margin-right: 0;
+      }
+      .item:nth-child(n + 5) {
+        margin-bottom: 0;
+      } */
+      /* .box {
+        width: 400px;
+        height: 400px;
+        background-color: #bfa;
+      }
+      .box::after {
+        content: '哈哈哈哈';
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      } */
+      /* .father {
+        width: 400px;
+        height: 400px;
+        background-color: red;
+      }
+      .son {
+        height: 100px;
+        border-left: 2px solid #000;
+        background-color: #bfa;
+      } */
+      /* body {
+        line-height: 1;
+      }
+      .box {
+        width: 500px;
+        height: 400px;
+        border: 1px solid #ccc;
+        padding: 41px 30px 0;
+        box-sizing: border-box;
+      }
+      .box h2 {
+        height: 41px;
+        border-bottom: 1px solid #ccc;
+        box-sizing: border-box;
+        font-size: 30px;
+      }
+      .box ul {
+        list-style: none;
+      }
+      .box ul li {
+        height: 50px;
+        padding-left: 30px;
+        border-bottom: 1px dashed #ccc;
+        line-height: 50px;
+      }
+      .box li a {
+        text-decoration: none;
+        font-size: 18px;
+        color: #666;
+      } */
+      /* .box {
+        height: 40px;
+        border-top: 3px solid #ff8500;
+        border-bottom: 1px solid #edeef0;
+      }
+      .box a {
+        display: inline-block;
+        width: 80px;
+        height: 40px;
+        text-decoration: none;
+        color: #4c4c4c;
+        font-size: 12px;
+        line-height: 40px;
+        text-align: center;
+      }
+      .box a:hover {
+        color: #ff8400;
+        background-color: #edeef0;
+      } */
+      /* a {
+        width: 120px;
+        height: 58px;
+        display: inline-block;
+        background-color: #fba;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        line-height: 50px;
+      } */
+      /* .one {
+        background: url('./images/bg1.png');
+      }
+      .two {
+        background: url('./images/bg2.png');
+      }
+      .three {
+        background: url('./images/bg3.png');
+      }
+      .four {
+        background: url('./images/bg4.png');
+      }
+      .one:hover {
+        background: url('./images/bg5.png');
+      }
+      .two:hover {
+        background: url('./images/bg6.png');
+      }
+      .three:hover {
+        background: url('./images/bg7.png');
+      }
+      .four:hover {
+        background: url('./images/bg8.png');
+      } */
+      /* a {
+        width: 80px;
+        height: 50px;
+        display: inline-block;
+        background-color: #f00;
+        text-decoration: none;
+        color: #fff;
+        text-align: center;
+        line-height: 50px;
+      }
+      a:hover {
+        background-color: #ffa500;
+      } */
+      /* body {
+        font-size: 30px;
+      }
+      .box {
+        width: 400px;
+        height: 400px; */
+      /* background-color: red;
+        background-image: url(./images/1.jpg);
+        background-repeat: no-repeat;
+        background-position: center 50px; */
+      /* background: red url(./images/1.jpg) no-repeat center center;
+      } */
+      /* body {
+        background-color: #f5f5f5;
+      }
+      .box {
+        width: 234px;
+        height: 300px;
+        background-color: #fff;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .box img {
+        width: 160px;
+      }
+      .title {
+        font-size: 14px;
+        height: 25px;
+      }
+      .info {
+        font-size: 12px;
+        color: #ccc;
+        height: 30px;
+      }
+      .price {
+        font-size: 14px;
+        color: #ffa500;
+      } */
+      /* .color-blue {
+        color: blue;
+      } */
+      /* .font-div {
+        width: 300px;
+        height: 300px;
+        background-color: skyblue;
+        line-height: 1;
+      }
+      .font {
+        text-indent: 2rem;
+        font: italic bold 30px 微软雅黑;
+      } */
+      /* .box {
+        width: 800px;
+        height: 800px; */
+      /* background-color: #808080; */
+      /* margin: 0 auto;
+      } */
+      /* h1 {
+        text-align: center;
+      }
+      .info {
+        text-align: center;
+      }
+      .time {
+        color: #808080;
+      }
+      .sina {
+        color: #87ceeb;
+        font-weight: 700;
+      }
+      a {
+        text-decoration: none;
+      }
+      p {
+        text-indent: 2em;
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- <h1 title="麻辣香锅">重庆火锅</h1>
+    <hr />
+    <p>很好吃<strong>很好吃</strong>很好吃很好吃很好吃1</p>
+    <p>很好吃很好吃很好吃很好吃很好吃2</p>
+    <p>
+      很好吃很好吃 <br />
+      很好吃很好吃很好吃3
+    </p>
+    <p>
+      很好吃很好吃 <br />
+      很好吃很好吃很好吃3
+    </p>
+    <p>
+      很好吃很好吃 <br />
+      很好吃很好吃很好吃3
+    </p>
+    <p>
+      很好吃很好吃 <br />
+      很好吃很好吃很好吃3
+    </p>
+    <p>
+      很好吃很好吃 <br />
+      很好吃很好吃很好吃3
+    </p>
+    <p>
+      很好吃很好吃 <br />
+      很好吃很好吃很好吃3
+    </p>
+    <p>
+      很好吃很好吃 <br />
+      很好吃很好吃很好吃3
+    </p>
+    <p>
+      很好吃很好吃 <br />
+      很好吃很好吃很好吃3
+    </p>
+    <p>
+      很好吃很好吃 <br />
+      很好吃很好吃很好吃3
+    </p>
+    <p>
+      很好吃很好吃 <br />
+      很好吃很好吃很好吃3
+    </p>
+    <p>
+      很好吃很好吃 <br />
+      很好吃很好吃很好吃3
+    </p>
+    <img src="./test.jpeg" alt="裂开了" title="熊猫头" />
+    <audio src="./music.mp3" controls></audio>
+    <a href="https://www.baidu.com" target="_blank">点我去百度</a>
+    <a href="#">点我去顶部</a> -->
+    <!-- ---------------------------------------------------------------------------------------------------------->
+    <!-- <table border="1" width="300" height="300">
+      <caption>
+        <h3>成绩单</h3>
+      </caption>
+      <thead>
+        <tr>
+          <th>姓名</th>
+          <th>成绩</th>
+          <th>评语</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>小红</td>
+          <td rowspan="2">90</td>
+          <td>考得不错</td>
+        </tr>
+        <tr>
+          <td>小明</td> -->
+    <!-- <td>90</td> -->
+    <!-- <td>考的还行</td>
+        </tr>
+        <tr>
+          <td>小绿</td>
+          <td>60</td>
+          <td>低分飘过</td>
+        </tr>
+        <tfoot>
+          <tr>
+            <td>总结</td>
+            <td colspan="2">还不错</td> -->
+    <!-- <td>还不错</td> -->
+    <!-- </tr>
+        </tfoot>
+      </tbody>
+    </table> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- <form>
+      用户名：<input type="text" placeholder="请输入用户名" /><br /><br />
+      密码：<input type="password" placeholder="请输入密码" /><br /><br />
+      性别: <input type="radio" name="sex" checked />男
+      <input type="radio" name="sex" />女<br /><br />
+      地区:
+      <select>
+        <option>北京</option>
+        <option selected>上海</option>
+        <option>广州</option>
+        <option>深圳</option></select
+      ><br /><br />
+      爱好: <input type="checkbox" checked id="one" /><label for="one"
+        >敲代码</label
+      >
+      <label><input type="checkbox" />吃饭</label>
+      <input type="checkbox" />睡觉<br /><br />
+      <input type="file" multiple /><br /><br />
+      <textarea cols="30" rows="20" placeholder="输入一些个人简介吧"></textarea
+      ><br /><br />
+      <input type="submit" />
+      <input type="reset" /><br /><br />
+
+      <button>提交</button> <button type="reset">重置</button>
+    </form> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- 字符实体: <br />
+    p标签是这样的:&nbsp;&lt;p&gt;&lt;/p&gt; -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- <table border="1" width="400" height="300">
+      <caption>
+        <h3>优秀学生信息表格</h3>
+      </caption>
+      <thead>
+        <tr>
+          <th>年级</th>
+          <th>姓名</th>
+          <th>学号</th>
+          <th>班级</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">高三</td>
+          <td>张三</td>
+          <td>001</td>
+          <td>三年二班</td>
+        </tr>
+        <tr> -->
+    <!-- <td>高三</td> -->
+    <!-- <td>里斯</td>
+          <td>002</td>
+          <td>三年四班</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>评语</td>
+          <td colspan="3">你们都很棒</td> -->
+    <!-- <td>你们都很棒</td>
+          <td>你们都很棒</td> -->
+    <!-- </tr>
+      </tfoot>
+    </table> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- <h1>青春不常在，抓紧谈恋爱</h1>
+    <hr />
+    <form>
+      昵称：<input type="text" placeholder="请输入昵称" /><br /><br />
+      性别：<input type="radio" name="gender" />男<input
+        type="radio"
+        name="gender"
+      />女<br /><br />
+      生日：<input type="date" /><br /><br />
+      城市:
+      <select>
+        <option>北京</option>
+        <option selected>上海</option>
+        <option>广州</option>
+        <option>深圳</option></select
+      ><br /><br />
+      婚姻状况: <input type="checkbox" checked />未婚<input
+        type="checkbox"
+      />已婚<input type="checkbox" />保密<br /><br />
+      兴趣爱好: <input type="checkbox" checked />吃饭
+      <input type="checkbox" checked />睡觉
+      <input type="checkbox" />打豆豆<br /><br />
+      个人介绍：<br />
+      <textarea cols="30" rows="10"></textarea><br />
+      <h2>我承诺</h2>
+      <ul>
+        <li>年满18、单身</li>
+        <li>抱着严谨的态度</li>
+        <li>真诚寻找另一半</li>
+      </ul>
+      <input type="checkbox" />我同意所有条款<br /><br />
+      <input type="submit" value="免费注册" />
+      <input type="reset" />
+    </form> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- <p style="color: red">css的应用</p>
+    <p class="color-blue">css的应用</p>
+    <p class="color-yellow">css的应用</p> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- <div class="font-div">
+      设置行高<br />
+      设置行高
+      <p class="font">css的font连写 css的font连写</p>
+    </div> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- <div class="box">
+      <h1>《自然》评选改变科学的10个计算机代码项目</h1>
+      <div class="info">
+        <span class="time">2077年01月28日</span>
+        <span class="sina">新浪科技</span>
+        <a href="#">收藏本文</a>
+      </div>
+      <hr />
+      <p>
+        这是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的话
+      </p>
+      <p>
+        这是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的话
+      </p>
+      <p>
+        这是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的话
+      </p>
+    </div> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- <div class="box">
+      <img src="./images/car.jpg" alt="" />
+      <div class="title">九号平衡车</div>
+      <div class="info">成年人的玩具</div>
+      <div class="price">1999元</div>
+    </div> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- <div class="box">123</div> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- <a href="#">导航1</a>
+    <a href="#">导航2</a>
+    <a href="#">导航3</a>
+    <a href="#">导航4</a>
+    <a href="#">导航5</a> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- <a href="#" class="one">五彩导航</a>
+    <a href="#" class="two">五彩导航</a>
+    <a href="#" class="three">五彩导航</a>
+    <a href="#" class="four">五彩导航</a> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- <div class="box">
+      <a href="#">新浪导航</a><a href="#">新浪导航</a><a href="#">新浪导航</a
+      ><a href="#">新浪导航</a>
+    </div> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- <div class="box">
+      <h2>最新新闻/New Articles</h2>
+      <ul>
+        <li><a href="#">111</a></li>
+        <li><a href="#">222</a></li>
+        <li><a href="#">333</a></li>
+        <li><a href="#">444</a></li>
+        <li><a href="#">555</a></li>
+      </ul>
+    </div> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- <div class="father">
+      <div class="son"></div>
+    </div> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- <div class="box">我是内容</div> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- <div class="box">
+      <div class="left"></div>
+      <div class="right">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+      </div>
+    </div> -->
+    <!-- <div class="father">
+      <div class="son"></div>
+    </div>
+    <div class="other"></div> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <!-- <div class="box"></div> -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <table border="2">
+      <tr>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>a</td>
+        <td>a</td>
+      </tr>
+      <tr>
+        <tr>b</tr>
+        <td>b</td>
+        <td>b</td>
+      </tr>
+    </table>
+  </body>
+</html>
