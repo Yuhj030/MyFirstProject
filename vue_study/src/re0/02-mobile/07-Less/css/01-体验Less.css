@@ -1,0 +1,12 @@
+.father {
+  width: 1.81333333rem;
+  background-color: #bfa;
+  color: blue;
+}
+.father .son {
+  background-color: #ccc;
+  color: blue;
+}
+.father:hover {
+  background-color: #f53;
+}

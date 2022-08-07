@@ -1,0 +1,43 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: Yuhj
+ * @Date: 2022-07-30 20:54:15
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <h1>欢迎您，{{name}}</h1>
+      <a href="https://www.baidu.com" @click.prevent="showInfo">点我提示信息</a
+      ><br />
+      <input @keydown.ctrl.y="showValue" type="text" />
+    </div>
+    <script>
+      Vue.config.keyCodes.huiche = 13; // 自定义Vue的按键别名 enter --> huiche
+      new Vue({
+        el: '#root',
+        data() {
+          return {
+            name: 'Yuhj',
+          };
+        },
+        methods: {
+          showInfo() {
+            alert('提示信息！');
+          },
+          showValue(e) {
+            console.log(e.key, e.keyCode);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

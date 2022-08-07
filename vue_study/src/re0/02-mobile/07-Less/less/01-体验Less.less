@@ -1,0 +1,15 @@
+// out: ./efg/abc.css
+// out: ./abc/
+@color: blue;
+.father {
+  width: (68 / 37.5rem);
+  background-color: #bfa;
+  color: @color;
+  .son {
+    background-color: #ccc;
+    color: @color;
+}
+  &:hover {
+    background-color: #f53;
+  }
+}

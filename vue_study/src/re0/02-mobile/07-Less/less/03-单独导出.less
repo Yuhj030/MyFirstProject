@@ -1,0 +1,16 @@
+// out: ./diyOut/abc.css
+// out: ./abc/
+// 单独导出至 指定文件夹 或 指定文件夹下 的 指定文件
+@color: blue;
+.father {
+  width: (68 / 37.5rem);
+  background-color: #bfa;
+  color: @color;
+  .son {
+    background-color: #ccc;
+    color: @color;
+}
+  &:hover {
+    background-color: #f53;
+  }
+}

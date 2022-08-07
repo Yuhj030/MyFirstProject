@@ -1,0 +1,79 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: Yuhj
+ * @Date: 2022-08-07 17:22:05
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <!-- 使用this.$set()添加姓名 -->
+      <span>姓名:{{person.name123}}</span><br />
+      <span>昵称:{{person.nickName}}</span> <br />
+      <button @click="updateMei">点我更新马冬梅的信息</button>
+
+      <ul>
+        <li v-for="(p, index) in persons" :key="p.id">
+          {{p.name}}--{{p.age}}--{{p.gender}}
+        </li>
+      </ul>
+    </div>
+    <script>
+      const vm = new Vue({
+        el: '#root',
+        data() {
+          return {
+            person: {
+              nickName: '张三',
+            },
+            persons: [
+              {
+                id: 001,
+                name: '马冬梅',
+                age: '50',
+                gender: '女',
+              },
+              {
+                id: 002,
+                name: '周冬雨',
+                age: '22',
+                gender: '女',
+              },
+              {
+                id: 003,
+                name: '周杰伦',
+                age: '44',
+                gender: '男',
+              },
+              {
+                id: 004,
+                name: '温兆伦',
+                age: '40',
+                gender: '男',
+              },
+            ],
+          };
+        },
+        methods: {
+          updateMei() {
+            // 无效！！！
+            this.persons[0] = {
+              id: 001,
+              name: '马老师',
+              age: '55',
+              gender: '男',
+            };
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

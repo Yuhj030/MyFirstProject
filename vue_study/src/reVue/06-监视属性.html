@@ -1,0 +1,65 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: Yuhj
+ * @Date: 2022-08-03 22:52:54
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div>今天天气真{{info}}</div>
+      <button @click="isHot = !isHot">切换天气</button>
+      <hr />
+      <div>a的值是{{number.a}}</div>
+      <button @click="number.a++">点我a+1</button>
+    </div>
+    <script>
+      const vm = new Vue({
+        el: '#root',
+        data() {
+          return {
+            isHot: true,
+            number: {
+              a: 1,
+              b: 2,
+            },
+          };
+        },
+        computed: {
+          info() {
+            return this.isHot ? '炎热' : '凉爽';
+          },
+        },
+        watch: {
+          info: {
+            // 立即执行监视
+            immediate: true,
+            handler(newV, oldV) {
+              console.log(newV, oldV);
+            },
+          },
+          number: {
+            // immediate: true,
+            // 开启深度监视
+            deep: true,
+            handler(newV, oldV) {
+              console.log('number发生了改变');
+            },
+          },
+        },
+      });
+      // 监视的另一种用法
+      // vm.$watch('info', function () {
+      //   console.log('info发生了改变');
+      // });
+    </script>
+  </body>
+</html>

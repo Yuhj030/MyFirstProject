@@ -1,0 +1,90 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: Yuhj
+ * @Date: 2022-08-07 13:50:28
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <input type="text" placeholder="请输入需要查询的内容" v-model="keyWord" />
+      <button @click="sort = 1">列表升序</button>
+      <button @click="sort = 2">列表降序</button>
+      <button @click="sort = 0">列表原顺序</button>
+
+      <ul>
+        <li v-for="(p, index) in filPersons" :key="index">
+          {{p.name}}--{{p.age}}--{{p.gender}}
+        </li>
+      </ul>
+    </div>
+    <script>
+      const vm = new Vue({
+        el: '#root',
+        data() {
+          return {
+            keyWord: '',
+            persons: [
+              {
+                name: '马冬梅',
+                age: '50',
+                gender: '女',
+              },
+              {
+                name: '周冬雨',
+                age: '22',
+                gender: '女',
+              },
+              {
+                name: '周杰伦',
+                age: '44',
+                gender: '男',
+              },
+              {
+                name: '温兆伦',
+                age: '40',
+                gender: '男',
+              },
+            ],
+            // filPersons: [],
+            sort: 0, //0原顺序 1升序 2降序
+          };
+        },
+        computed: {
+          filPersons: {
+            get() {
+              const arr = (this.filPersons = this.persons.filter((p) => {
+                return p.name.indexOf(this.keyWord) !== -1;
+              }));
+              if (this.sort) {
+                arr.sort((p1, p2) => {
+                  return this.sort === 1 ? p1.age - p2.age : p2.age - p1.age;
+                });
+              }
+              return arr;
+            },
+            set(val) {},
+          },
+        },
+        watch: {
+          // keyWord: {
+          //   immediate: true,
+          //   handler(val) {
+          //     this.filPersons = this.persons.filter((p) => {
+          //       return p.name.indexOf(val) !== -1;
+          //     });
+          //   },
+          // },
+        },
+      });
+    </script>
+  </body>
+</html>
