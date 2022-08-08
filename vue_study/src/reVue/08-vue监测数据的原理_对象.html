@@ -65,12 +65,19 @@
         methods: {
           updateMei() {
             // 无效！！！
-            this.persons[0] = {
+            // this.persons[0] = {
+            //   id: 001,
+            //   name: '马老师',
+            //   age: '55',
+            //   gender: '男',
+            // };
+            // 奏效！！！
+            this.persons.splice(0, 1, {
               id: 001,
               name: '马老师',
               age: '55',
               gender: '男',
-            };
+            });
           },
         },
       });
