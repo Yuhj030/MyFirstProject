@@ -1,1 +1,1 @@
-<view>info</view>
+<view><view class="container"><view class="title">{{title}}</view><view class="art_container"><rich-text nodes="{{string}}"></rich-text></view></view></view>
