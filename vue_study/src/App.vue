@@ -68,9 +68,20 @@ export default {
     },
     // 清除已完成任务
     clearAllDone() {
+      if (confirm('是否删除所有已完成的选项')) {
+        this.todos = this.todos.filter((todoObj) => {
+          return !todoObj.done;
+        });
+      }
       // filter返回的结果是符合条件的内容，也就是默认为true，所以取反找到false的元素
-      this.todos = this.todos.filter((todoObj) => {
-        return !todoObj.done;
+    },
+    // 更新todoObj的标题
+    updateTodoObj(todoObj, newTitle) {
+      this.todos.forEach((todo) => {
+        if (todoObj.id == todo.id) {
+          todo.title = newTitle;
+          return;
+        }
       });
     },
     demo(mesName, data) {
@@ -79,11 +90,12 @@ export default {
   },
   mounted() {
     this.$bus.$on('handleCheck', this.handleCheck);
+    this.$bus.$on('updateTodoObj', this.updateTodoObj);
     // this.$bus.$on('deleteTodoObj', this.deleteTodoObj);
     this.subId = pubsub.subscribe('deleteTodoObj', this.deleteTodoObj);
   },
   beforeDestroy() {
-    this.$bus.$off('handleCheck');
+    this.$bus.$off(['handleCheck', 'updateTodoObj']);
     // this.$bus.$off('deleteTodoObj');
     pubsub.unsubscribe(this.subId);
   },

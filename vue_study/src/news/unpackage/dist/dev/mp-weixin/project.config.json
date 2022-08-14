@@ -1,16 +1,37 @@
 {
-  "description": "项目配置文件。",
+  "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
   "packOptions": {
     "ignore": [],
     "include": []
   },
   "setting": {
     "urlCheck": false,
+    "coverView": true,
+    "es6": true,
+    "postcss": true,
+    "lazyloadPlaceholderEnable": false,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "autoAudits": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "enhance": true,
+    "useMultiFrameRuntime": true,
+    "showShadowRootInWxmlPanel": true,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "disableUseStrict": false,
+    "ignoreUploadUnusedFiles": true,
+    "checkInvalidKey": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
-    }
+    },
+    "useStaticServer": true,
+    "showES6CompileOption": false,
+    "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
   "libVersion": "2.25.3",
@@ -20,9 +41,24 @@
     "miniprogram": {
       "list": [
         {
-          "name": "test",
+          "name": "info",
           "pathName": "pages/info/info",
           "query": "newsId=5310910"
+        },
+        {
+          "name": "message",
+          "pathName": "pages/message/message",
+          "query": ""
+        },
+        {
+          "name": "uni_style",
+          "pathName": "pages/uni_style/uni_style",
+          "query": ""
+        },
+        {
+          "name": "pages/uni_style/uni_style",
+          "pathName": "pages/uni_style/uni_style",
+          "query": ""
         }
       ]
     }

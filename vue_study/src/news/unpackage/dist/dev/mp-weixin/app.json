@@ -1,14 +1,35 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/info/info"
+    "pages/info/info",
+    "pages/message/message",
+    "pages/uni_style/uni_style"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "backgroundColor": "#BFA",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/logo.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "信息"
+      }
+    ]
   },
   "usingComponents": {}
 }

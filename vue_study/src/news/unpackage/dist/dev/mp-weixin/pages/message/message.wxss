@@ -1,0 +1,10 @@
+.box {
+  background-color: #bfa;
+}
+.box_active {
+  background-color: red;
+}
+.input_text {
+  background-color: #bfa;
+}
+
