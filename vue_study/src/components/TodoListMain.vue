@@ -6,11 +6,13 @@
 -->
 <template>
   <ul class="todo-main">
-    <todo-list-item
-      v-for="todoObj in todos"
-      :key="todoObj.id"
-      :todoObj="todoObj"
-    />
+    <transition-group appear>
+      <todo-list-item
+        v-for="todoObj in todos"
+        :key="todoObj.id"
+        :todoObj="todoObj"
+      />
+    </transition-group>
   </ul>
 </template>
 
@@ -39,5 +41,20 @@ export default {
   border-radius: 2px;
   padding-left: 5px;
   margin-top: 10px;
+}
+@keyframes comeAndGo {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+.v-enter-active {
+  animation: comeAndGo 0.5s;
+}
+.v-leave-active {
+  animation: comeAndGo 0.5s reverse;
 }
 </style>

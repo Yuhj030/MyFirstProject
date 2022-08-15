@@ -17,6 +17,8 @@
         />
       </div>
     </div>
+    <!-- 动画测试组件 -->
+    <!-- <animation-test /> -->
   </div>
 </template>
 
@@ -24,6 +26,7 @@
 import TodoListHeader from './components/TodoListHeader.vue';
 import TodoListMain from './components/TodoListMain.vue';
 import TodoListFooter from './components/TodoListFooter.vue';
+import AnimationTest from './components/AnimationTest.vue';
 import pubsub from 'pubsub-js';
 
 export default {
@@ -37,6 +40,7 @@ export default {
     TodoListHeader,
     TodoListMain,
     TodoListFooter,
+    AnimationTest,
   },
   methods: {
     // 添加一个todoObj
