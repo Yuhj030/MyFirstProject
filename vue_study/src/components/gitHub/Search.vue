@@ -12,13 +12,17 @@
         <input
           type="text"
           placeholder="enter the name you search"
-        />&nbsp;<button>Search</button>
+          v-model="keyWord"
+          @keyup.enter="getUserInfos"
+        />&nbsp;
+        <button @click="getUserInfos">Search</button>
       </div>
     </section>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   // 组件名称
   name: 'Search',
@@ -28,14 +32,43 @@ export default {
   components: {},
   // 组件状态值
   data() {
-    return {};
+    return {
+      keyWord: '',
+    };
   },
   // 计算属性
   computed: {},
   // 侦听器
   watch: {},
   // 组件方法
-  methods: {},
+  methods: {
+    getUserInfos() {
+      this.$bus.$emit('getUserList', {
+        isFirst: false,
+        isLoading: true,
+        errMsg: '',
+        userList: [],
+      });
+      axios.get(`https://api.github.com/search/users?q=${this.keyWord}`).then(
+        (res) => {
+          console.log('请求成功', res.data);
+          this.$bus.$emit('getUserList', {
+            isLoading: false,
+            errMsg: '',
+            userList: res.data.items,
+          });
+        },
+        (err) => {
+          console.log('请求失败', err.message);
+          this.$bus.$emit('getUserList', {
+            isLoading: false,
+            errMsg: err.message,
+            userList: [],
+          });
+        }
+      );
+    },
+  },
 };
 </script>
 
