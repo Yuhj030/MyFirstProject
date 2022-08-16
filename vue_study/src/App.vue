@@ -5,7 +5,7 @@
  * @Date: 2022-05-26 13:48:56
 -->
 <template>
-  <div id="app">
+  <div>
     <div class="todo-container">
       <div class="todo-wrap">
         <todo-list-header @addTodoObj="addTodoObj" />
@@ -17,8 +17,16 @@
         />
       </div>
     </div>
+    <br /><br />
     <!-- 动画测试组件 -->
     <!-- <animation-test /> -->
+
+    <!-- 配置代理组件 -->
+    <!-- <AxiosTest /> -->
+
+    <!-- gitHub组件 -->
+    <Search />
+    <List />
   </div>
 </template>
 
@@ -27,6 +35,9 @@ import TodoListHeader from './components/TodoListHeader.vue';
 import TodoListMain from './components/TodoListMain.vue';
 import TodoListFooter from './components/TodoListFooter.vue';
 import AnimationTest from './components/AnimationTest.vue';
+import AxiosTest from './components/AxiosTest.vue';
+import Search from './components/gitHub/Search.vue';
+import List from './components/gitHub/List.vue';
 import pubsub from 'pubsub-js';
 
 export default {
@@ -41,6 +52,9 @@ export default {
     TodoListMain,
     TodoListFooter,
     AnimationTest,
+    AxiosTest,
+    Search,
+    List,
   },
   methods: {
     // 添加一个todoObj

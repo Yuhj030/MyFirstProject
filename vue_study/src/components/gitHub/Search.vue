@@ -1,0 +1,42 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: Yuhj
+ * @Date: 2022-08-16 10:05:50
+-->
+<template>
+  <div class="container">
+    <section class="jumbotron">
+      <h3 class="jumbotron-heading">Search Github Users</h3>
+      <div>
+        <input
+          type="text"
+          placeholder="enter the name you search"
+        />&nbsp;<button>Search</button>
+      </div>
+    </section>
+  </div>
+</template>
+
+<script>
+export default {
+  // 组件名称
+  name: 'Search',
+  // 组件参数 接收来自父组件的数据
+  props: {},
+  // 局部注册的组件
+  components: {},
+  // 组件状态值
+  data() {
+    return {};
+  },
+  // 计算属性
+  computed: {},
+  // 侦听器
+  watch: {},
+  // 组件方法
+  methods: {},
+};
+</script>
+
+<style scoped></style>
